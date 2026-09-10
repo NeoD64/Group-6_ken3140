@@ -1,0 +1,163 @@
+@prefix : <https://www.hp.com/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema.org: <https://schema.org/> .
+
+<https://w3id.org/sulo/schema/resource/ontology-schema/25e464ec-7d06-4f95-8bf2-c54b71471bea>
+    dct:title "HP Webstore" ;
+    rdfs:seeAlso <https://schema.org/> .
+
+# ── Classes ──────────────────────────────────────────────────────────────
+
+:Battery
+    a rdfs:Class .
+
+<https://schema.org/Brand>
+    a rdfs:Class .
+
+:BudgetLaptop
+    a rdfs:Class ;
+    rdfs:subClassOf :Laptop .
+
+:BusinessLaptop
+    a rdfs:Class ;
+    rdfs:subClassOf :Laptop .
+
+:Category
+    a rdfs:Class .
+
+:Desktop
+    a rdfs:Class ;
+    rdfs:subClassOf <https://schema.org/Product> .
+
+:GamingDesktop
+    a rdfs:Class ;
+    rdfs:subClassOf :Desktop .
+
+:GamingLaptop
+    a rdfs:Class ;
+    rdfs:subClassOf :Laptop .
+
+:GraphicsCard
+    a rdfs:Class .
+
+:Ink
+    a rdfs:Class ;
+    rdfs:subClassOf <https://schema.org/Product> .
+
+:InkjetPrinter
+    a rdfs:Class ;
+    rdfs:subClassOf :Printer .
+
+:Laptop
+    a rdfs:Class ;
+    rdfs:subClassOf <https://schema.org/Product> .
+
+:LaserPrinter
+    a rdfs:Class ;
+    rdfs:subClassOf :Printer .
+
+:MiniDesktop
+    a rdfs:Class ;
+    rdfs:subClassOf :Desktop .
+
+:OperatingSystem
+    a rdfs:Class .
+
+:Plotter
+    a rdfs:Class ;
+    rdfs:subClassOf :Printer .
+
+:Printer
+    a rdfs:Class ;
+    rdfs:subClassOf <https://schema.org/Product> .
+
+:Processor
+    a rdfs:Class .
+
+<https://schema.org/Product>
+    a rdfs:Class .
+
+:Storage
+    a rdfs:Class .
+
+:ThermalPrinter
+    a rdfs:Class ;
+    rdfs:subClassOf :Printer .
+
+:Workstation
+    a rdfs:Class ;
+    rdfs:subClassOf :Desktop .
+
+# ── Properties ───────────────────────────────────────────────────────────
+
+:compatibleWith
+    a rdfs:Property ;
+    rdfs:domain :Ink ;
+    rdfs:range :Printer .
+
+:hasBattery
+    a rdfs:Property ;
+    rdfs:domain :Laptop ;
+    rdfs:range :Battery .
+
+:hasBrand
+    a rdfs:Property ;
+    rdfs:domain :Product ;
+    rdfs:range <https://schema.org/Brand> .
+
+:hasCategory
+    a rdfs:Property ;
+    rdfs:domain :Product ;
+    rdfs:range :Category .
+
+:hasGraphicsCard
+    a rdfs:Property ;
+    rdfs:domain :GamingLaptop ;
+    rdfs:range :GraphicsCard .
+
+:hasOperatingSystem
+    a rdfs:Property ;
+    rdfs:domain :Laptop ;
+    rdfs:range :OperatingSystem .
+
+:hasProcessor
+    a rdfs:Property ;
+    rdfs:domain :Laptop ;
+    rdfs:range :Processor .
+
+:hasStorage
+    a rdfs:Property ;
+    rdfs:domain :Laptop ;
+    rdfs:range :Storage .
+
+:isWireless
+    a rdfs:Property ;
+    rdfs:domain :Printer ;
+    rdfs:range xsd:boolean .
+
+:modelNumber
+    a rdfs:Property ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:string .
+
+:pageYield
+    a rdfs:Property ;
+    rdfs:domain :Ink ;
+    rdfs:range xsd:integer .
+
+:price
+    a rdfs:Property ;
+    rdfs:domain :Product ;
+    rdfs:range xsd:decimal .
+
+:ramSizeGB
+    a rdfs:Property ;
+    rdfs:domain :Laptop ;
+    rdfs:range xsd:integer .
+
+:screenSizeInches
+    a rdfs:Property ;
+    rdfs:domain :Laptop ;
+    rdfs:range xsd:decimal .
