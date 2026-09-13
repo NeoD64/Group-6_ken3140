@@ -67,412 +67,379 @@ schema.org:Product a rdfs:Class .
 :Workstation a rdfs:Class ;
     rdfs:subClassOf :Desktop .
 
+product:2H1W1A a subcat:InkjetPrinter ;
+    schema.org:brand brand:HP ;
+    schema.org:color "Colour"^^xsd:string ;
+    schema.org:name "HP Smart Tank 6005 All-in-One"^^xsd:string ;
+    schema.org:price 217.0 ;
+    schema.org:sku "2H1W1A"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-smart-tank-6005-all-in-one-2h1w1a-bhc> .
+
 product:2Y9H2A a subcat:Plotter ;
     schema.org:brand brand:DesignJet ;
+    schema.org:color "Black"^^xsd:string ;
     schema.org:name "HP DesignJet T850 36-inch / A0 grootformaat printer multifunctionele plotter (2Y9H2A)"^^xsd:string ;
     schema.org:price 4310.0 ;
-    schema.org:ratingValue "4.8"^^xsd:float ;
     schema.org:sku "2Y9H2A"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-designjet-t850-36-inch-a0-grootformaat-printer-multifunctionele-plotter-2y9h2a-2y9h2a-b19> .
 
-product:58R10A a subcat:Laserprinter ;
+product:4V2N0B a subcat:InkjetPrinter ;
+    schema.org:brand brand:OfficeJet ;
+    schema.org:color "Colour"^^xsd:string ;
+    schema.org:name "HP OfficeJet Pro 9120b All-in-One printer"^^xsd:string ;
+    schema.org:price 249.01 ;
+    schema.org:sku "4V2N0B"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-officejet-pro-9120b-all-in-one-printer-4v2n0b-629> .
+
+product:58R10A a subcat:LaserPrinter ;
     schema.org:brand brand:LaserJet ;
     schema.org:color "Colour"^^xsd:string ;
     schema.org:name "HP Color LaserJet Enterprise Flow MFP 5800zf-printer"^^xsd:string ;
     schema.org:price 2749.99 ;
-    schema.org:ratingValue "4.2"^^xsd:float ;
     schema.org:sku "58R10A"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-color-laserjet-enterprise-flow-mfp-5800zf-printer-58r10a-b19> .
 
-product:5E901EA a subcat:workstation ;
+product:5E901EA a subcat:Workstation ;
     schema.org:brand brand:HP_Z ;
+    schema.org:color "Black"^^xsd:string ;
     schema.org:name "HP Z4 Tower G5 workstation - NVIDIA RTX PRO 4000 Blackwell 24GB - 3 jaar onsite garantie"^^xsd:string ;
     schema.org:price 6498.99 ;
-    schema.org:ratingValue "4.6"^^xsd:float ;
     schema.org:sku "5E901EA"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hp-z4-g5-workstation-pc-wolf-pro-security-edition-5e901ea-uug> .
 
 product:5HB07D a subcat:Plotter ;
     schema.org:brand brand:DesignJet ;
+    schema.org:color "Black"^^xsd:string ;
     schema.org:name "HP DesignJet T230 24-inch / A1 grootformaat Plotter Printer editie 2025 (5HB07D)"^^xsd:string ;
     schema.org:price 670.0 ;
-    schema.org:ratingValue "4.0"^^xsd:float ;
     schema.org:sku "5HB07D"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-designjet-t230-24-inch-a1-grootformaat-plotter-printer-editie-2025-5hb07d-5hb07d-b19> .
 
 product:5HB09D a subcat:Plotter ;
     schema.org:brand brand:DesignJet ;
+    schema.org:color "Black"^^xsd:string ;
     schema.org:name "HP DesignJet T630 24-inch / A1 grootformaat Plotter Printer editie 2025 (5HB09D)"^^xsd:string ;
     schema.org:price 1110.01 ;
-    schema.org:ratingValue "5.0"^^xsd:float ;
     schema.org:sku "5HB09D"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-designjet-t630-24-inch-a1-grootformaat-plotter-printer-editie-2025-5hb09d-5hb09d-b19> .
 
 product:5HB10D a subcat:Plotter ;
     schema.org:brand brand:DesignJet ;
+    schema.org:color "Black"^^xsd:string ;
     schema.org:name "HP DesignJet T650 36-inch / A0 grootformaat Plotter Printer editie 2025 (5HB10D)"^^xsd:string ;
     schema.org:price 1689.99 ;
-    schema.org:ratingValue "4.1"^^xsd:float ;
     schema.org:sku "5HB10D"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-designjet-t650-36-inch-a0-grootformaat-plotter-printer-editie-2025-5hb10d-5hb10d-b19> .
 
-product:67P98A a subcat:Laserprinter ;
+product:67P98A a subcat:LaserPrinter ;
     schema.org:brand brand:LaserJet ;
     schema.org:color "Colour"^^xsd:string ;
     schema.org:name "HP Color LaserJet Enterprise 4701dn printer"^^xsd:string ;
-    schema.org:price 199.99 ;
-    schema.org:ratingValue "4.0"^^xsd:float ;
+    schema.org:price 649.06 ;
     schema.org:sku "67P98A"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-color-laserjet-enterprise-4701dn-printer-67p98a-b19> .
 
-product:67Q06A a subcat:Laserprinter ;
+product:67Q06A a subcat:LaserPrinter ;
     schema.org:brand brand:LaserJet ;
     schema.org:color "Colour"^^xsd:string ;
     schema.org:name "HP Color LaserJet Enterprise MFP 4801fw printer (67Q06A)"^^xsd:string ;
     schema.org:price 993.18 ;
-    schema.org:ratingValue "4.5"^^xsd:float ;
     schema.org:sku "67Q06A"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-color-laserjet-enterprise-mfp-4801fw-printer-67q06a-b19> .
 
-product:8J9K7F a subcat:Laserprinter ;
+product:714P0B a subcat:InkjetPrinter ;
+    schema.org:brand brand:Envy ;
+    schema.org:color "Colour"^^xsd:string ;
+    schema.org:name "HP Envy 6532e All-in-One printer met 9 maanden Instant Ink via HP+"^^xsd:string ;
+    schema.org:price 113.99 ;
+    schema.org:sku "714P0B"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-envy-6532e-all-in-one-printer-met-6-maanden-instant-ink-via-hp-714p0b-629> .
+
+product:8J9K7F a subcat:LaserPrinter ;
     schema.org:brand brand:LaserJet ;
     schema.org:color "Black"^^xsd:string ;
     schema.org:name "HP LaserJet MFP M235sdw printer"^^xsd:string ;
     schema.org:price 239.89 ;
-    schema.org:ratingValue "4.3"^^xsd:float ;
     schema.org:sku "8J9K7F"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-laserjet-mfp-m235sdw-printer-8j9k7f-b19> .
 
-product:8J9L0F a subcat:Laserprinter ;
+product:8J9L0F a subcat:LaserPrinter ;
     schema.org:brand brand:LaserJet ;
     schema.org:color "Black"^^xsd:string ;
     schema.org:name "HP LaserJet M209d printer"^^xsd:string ;
     schema.org:price 99.0 ;
-    schema.org:ratingValue "4.2"^^xsd:float ;
     schema.org:sku "8J9L0F"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-laserjet-m209d-printer-8j9l0f-b19> .
 
-product:8T223EA a subcat:workstation ;
+product:8T223EA a subcat:Workstation ;
     schema.org:brand brand:HP_Z ;
+    schema.org:color "Black"^^xsd:string ;
     schema.org:name "HP Z2 Mini G1a workstation - AMD Radeon 8050S - 3 jaar onsite garantie"^^xsd:string ;
     schema.org:price 3199.0 ;
-    schema.org:ratingValue "4.5"^^xsd:float ;
     schema.org:sku "8T223EA"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/z2-mini-g1a-workstation-amd-radeon-8050s-3-jaar-onsite-garantie-8t223ea-uug> .
 
-product:A3ZJ0ET a subcat:Business_Laptop ;
+product:A24HMB a subcat:InkjetPrinter ;
+    schema.org:brand brand:DeskJet ;
+    schema.org:color "Colour"^^xsd:string ;
+    schema.org:name "HP DeskJet 4320 All-in-One printer met 6 maanden Instant Ink"^^xsd:string ;
+    schema.org:price 60.0 ;
+    schema.org:sku "A24HMB"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-deskjet-4320-all-in-one-printer-a24hmb-629> .
+
+product:A3ZJ0ET a subcat:BusinessLaptop ;
     schema.org:brand brand:HP_Z ;
     schema.org:color "Meteor Silver"^^xsd:string ;
     schema.org:name "HP Zbook Ultra G1a 14\" mobile workstation - OLED scherm met touch - AMD Radeon 8050S Graphics"^^xsd:string ;
     schema.org:price 3299.0 ;
-    schema.org:ratingValue "5.0"^^xsd:float ;
     schema.org:sku "A3ZJ0ET"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-zbook-ultra-14-inch-g1a-mobiele-workstation-pc-wolf-pro-security-edition-data-science-a3zj0et-uug> .
 
 product:AM0X9A a subcat:Plotter ;
     schema.org:brand brand:DesignJet ;
+    schema.org:color "Black"^^xsd:string ;
     schema.org:name "HP DesignJet T870 24 inch printer"^^xsd:string ;
     schema.org:price 1970.0 ;
-    schema.org:ratingValue "3.8"^^xsd:float ;
     schema.org:sku "AM0X9A"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-designjet-t870-24-inch-printer-am0x9a-b19> .
 
-product:B76QMET a subcat:workstation ;
-    schema.org:brand brand:HP_Z ;
-    schema.org:name "HP Z2 G1i Tower workstation - NVIDIA RTX 2000 Ada - 3 jaar onsite garantie"^^xsd:string ;
-    schema.org:price 3999.0 ;
-    schema.org:ratingValue "4.0"^^xsd:float ;
-    schema.org:sku "B76QMET"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hp-z2-g1i-tower-workstation-nvidia-rtx-2000-ada-3-jaar-onsite-garantie-b76qmet-uug> .
-
-product:B7RT8AE a subcat:InktCartridge ;
-    schema.org:brand brand:HP ;
-    schema.org:color "Three-colour"^^xsd:string ;
-    schema.org:name "HP 302XL/304XL originele drie-kleuren inktcartridge"^^xsd:string ;
-    schema.org:price 52.49 ;
-    schema.org:ratingValue "4.2"^^xsd:float ;
-    schema.org:sku "B7RT8AE"^^xsd:string ;
-    schema.org:url <https://www.hp.com/nl-nl/shop/products/supplies/hp-302xl-304xl-originele-drie-kleuren-inktcartridge-b7rt8ae-ls1> .
-
-product:B7RT9AE a subcat:InktCartridge ;
-    schema.org:brand brand:HP ;
-    schema.org:color "Black"^^xsd:string ;
-    schema.org:name "HP 302XL/304XL originele zwarte inktcartridge"^^xsd:string ;
-    schema.org:price 42.99 ;
-    schema.org:ratingValue "4.9"^^xsd:float ;
-    schema.org:sku "B7RT9AE"^^xsd:string ;
-    schema.org:url <https://www.hp.com/nl-nl/shop/products/supplies/hp-302-304-originele-zwarte-inktcartridge-b7rt7ae-ls1> .
-
-product:BW4E4EA a subcat:Gaming_Laptop ;
-    schema.org:brand brand:OMEN ;
-    schema.org:color "Shadow Black"^^xsd:string ;
-    schema.org:name "HP OMEN Transcend 14\" Gaming Laptop - 14-fb1002nb - Shadow Black - QHD OLED - RTX 5060 - Azerty toetsenbord met RGB verlichting per toets"^^xsd:string ;
-    schema.org:price 2999.0 ;
-    schema.org:ratingValue "4.3"^^xsd:float ;
-    schema.org:sku "BW4E4EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omen-transcend-14-gaming-laptop-14-fb1002nb-shadow-black-qhd-oled-rtx-5060-azerty-toetsenbord-met-rgb-verlichting-per-toets-bw4e4ea-uug> .
-
-product:C54W7AT a subcat:Business_Laptop ;
-    schema.org:brand brand:ProBook ;
-    schema.org:color "Snoekzilver"^^xsd:string ;
-    schema.org:name "HP ProBook 4 G1q 14\" laptop"^^xsd:string ;
-    schema.org:price 1098.99 ;
-    schema.org:ratingValue "4.0"^^xsd:float ;
-    schema.org:sku "C54W7AT"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-probook-4-g1q-14-inch-notebook-next-gen-ai-pc-c54w7at-uug> .
-
-product:CF372AM a subcat:InktCartridge ;
-    schema.org:brand brand:LaserJet ;
-    schema.org:color "Cyan/Magenta/Yellow"^^xsd:string ;
-    schema.org:name "HP 304A originele cyaan/magenta/gele LaserJet tonercartridge, 3-pack"^^xsd:string ;
-    schema.org:price 600.99 ;
-    schema.org:ratingValue "4.7"^^xsd:float ;
-    schema.org:sku "CF372AM"^^xsd:string ;
-    schema.org:url <https://www.hp.com/nl-nl/shop/products/supplies/hp-304a-originele-cyaan-magenta-gele-laserjet-tonercartridge-3-pack-cf372am> .
-
-product:CH562EE a subcat:InktCartridge ;
-    schema.org:brand brand:HP ;
-    schema.org:color "Three-colour"^^xsd:string ;
-    schema.org:name "HP 301 originele drie-kleuren inktcartridge"^^xsd:string ;
-    schema.org:price 33.49 ;
-    schema.org:ratingValue "4.0"^^xsd:float ;
-    schema.org:sku "CH562EE"^^xsd:string ;
-    schema.org:url <https://www.hp.com/nl-nl/shop/products/supplies/hp-301-originele-drie-kleuren-inktcartridge-ch562ee-uus> .
-
-product:CH563EE a subcat:InktCartridge ;
-    schema.org:brand brand:HP ;
-    schema.org:color "Black"^^xsd:string ;
-    schema.org:name "HP 301XL originele high-capacity zwarte inktcartridge"^^xsd:string ;
-    schema.org:price 57.49 ;
-    schema.org:ratingValue "4.5"^^xsd:float ;
-    schema.org:sku "CH563EE"^^xsd:string ;
-    schema.org:url <https://www.hp.com/nl-nl/shop/products/supplies/hp-301xl-originele-high-capacity-zwarte-inktcartridge-ch563ee-uus> .
-
-product:CV7N2EA a subcat:workstation ;
-    schema.org:brand brand:HP_Z ;
-    schema.org:name "HP Z1 Tower G1i workstation – NVIDIA RTX A400 – 3 jaar hardware-ondersteuning op locatie"^^xsd:string ;
-    schema.org:price 2799.0 ;
-    schema.org:ratingValue "4.2"^^xsd:float ;
-    schema.org:sku "CV7N2EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hp-z1-tower-g1i-desktop-pc-wolf-pro-security-edition-cv7n2ea-uug> .
-
-product:CZ9K4ET a subcat:workstation ;
-    schema.org:brand brand:HP_Z ;
-    schema.org:name "HP ZGX Nano G1n AI Station"^^xsd:string ;
-    schema.org:price 7798.99 ;
-    schema.org:ratingValue "4.4"^^xsd:float ;
-    schema.org:sku "CZ9K4ET"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hp-zgx-nano-g1n-ai-station-cz9k4et-uug> .
-
-product:D4DP1EA a subcat:Business_Laptop ;
-    schema.org:brand brand:ProBook ;
-    schema.org:color "Snoekzilver"^^xsd:string ;
-    schema.org:name "HP ProBook 4 G1i 16\" laptop – LTE/4G - Azerty toetsenbord met verlichting - 3 jaar onsite hardware support"^^xsd:string ;
-    schema.org:price 1299.0 ;
-    schema.org:ratingValue "4.5"^^xsd:float ;
-    schema.org:sku "D4DP1EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-probook-4-g1i-16-inch-notebook-ai-pc-wolf-pro-security-edition-d4dp1ea-uug> .
-
-product:D4TM8EA a subcat:Business_Laptop ;
-    schema.org:brand brand:ProBook ;
-    schema.org:color "Snoekzilver"^^xsd:string ;
-    schema.org:name "HP ProBook 4 G1i 16 inch Notebook AI PC Wolf Pro Security Edition"^^xsd:string ;
-    schema.org:price 1449.0 ;
-    schema.org:ratingValue "4.9"^^xsd:float ;
-    schema.org:sku "D4TM8EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-probook-4-g1i-16-inch-notebook-ai-pc-wolf-pro-security-edition-d4tm8ea-uug> .
-
-product:D8BE9EA a subcat:Gaming_desktop ;
-    schema.org:brand brand:OMEN ;
-    schema.org:name "HP OMEN 16L Gaming Desktop PC TG03-0104nb PC"^^xsd:string ;
-    schema.org:price 1199.0 ;
-    schema.org:ratingValue "4.1"^^xsd:float ;
-    schema.org:sku "D8BE9EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/omen-16l-gaming-desktop-pc-tg03-0104nb-pc-d8be9ea-uug> .
-
-product:D8BK3EA a subcat:Budgetlaptop ;
-    schema.org:brand brand:OmniBook ;
-    schema.org:color "Glacier Silver / Canvas Gray"^^xsd:string ;
-    schema.org:name "HP OmniBook 3 Laptop Next Gen AI 17-df0104nbx"^^xsd:string ;
-    schema.org:price 799.0 ;
-    schema.org:ratingValue "4.5"^^xsd:float ;
-    schema.org:sku "D8BK3EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omnibook-3-laptop-next-gen-ai-17-df0104nbx-d8bk3ea-uug> .
-
-product:D8BZ3EA a subcat:Budgetlaptop ;
-    schema.org:brand brand:OmniBook ;
-    schema.org:color "Glacier Silver / Canvas Gray"^^xsd:string ;
-    schema.org:name "HP OmniBook 3 Laptop 14-hu0003nbx"^^xsd:string ;
-    schema.org:price 749.0 ;
-    schema.org:ratingValue "4.0"^^xsd:float ;
-    schema.org:sku "D8BZ3EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omnibook-3-laptop-14-hu0003nbx-d8bz3ea-uug> .
-
-product:D8BZ6EA a subcat:Budgetlaptop ;
-    schema.org:brand brand:OmniBook ;
-    schema.org:color "Glacier Silver / Canvas Gray"^^xsd:string ;
-    schema.org:name "HP OmniBook 3 Laptop 16-by0003nbx"^^xsd:string ;
-    schema.org:price 599.0 ;
-    schema.org:ratingValue "4.7"^^xsd:float ;
-    schema.org:sku "D8BZ6EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omnibook-3-laptop-16-by0003nbx-d8bz6ea-uug> .
-
-product:D8CF0EA a subcat:Gaming_Laptop ;
-    schema.org:brand brand:OMEN ;
-    schema.org:color "Shadow Black"^^xsd:string ;
-    schema.org:name "HP HyperX OMEN 15 inch Gaming Laptop PC 15-gb0000nb"^^xsd:string ;
-    schema.org:price 1699.0 ;
-    schema.org:ratingValue "4.6"^^xsd:float ;
-    schema.org:sku "D8CF0EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hyperx-omen-15-inch-gaming-laptop-pc-15-gb0000nb-d8cf0ea-uug> .
-
-product:DJ4320 a subcat:InkjetPrinter ;
-    schema.org:brand brand:DeskJet ;
-    schema.org:color "Colour"^^xsd:string ;
-    schema.org:name "HP DeskJet 4320 All-in-One printer met 6 maanden Instant Ink"^^xsd:string ;
-    schema.org:price 60.0 ;
-    schema.org:ratingValue "4.0"^^xsd:float ;
-    schema.org:sku "DJ4320"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-deskjet-4320-all-in-one-printer-a24hmb-629> .
-
-product:DU1F2EA a subcat:Business_Laptop ;
-    schema.org:brand brand:ProBook ;
-    schema.org:color "Snoekzilver"^^xsd:string ;
-    schema.org:name "HP ProBook 4 G2i 16\" Next Gen AI laptop met touch en LTE/5G - Azerty toetsenbord met verlichting - 3 jaar onsite hardware support"^^xsd:string ;
-    schema.org:price 1649.0 ;
-    schema.org:ratingValue "3.9"^^xsd:float ;
-    schema.org:sku "DU1F2EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-wolf-pro-security-edition-du1f2ea-uug> .
-
-product:E0TV3EA a subcat:Budgetlaptop ;
-    schema.org:brand brand:OmniBook ;
-    schema.org:color "Nouvelle Silver"^^xsd:string ;
-    schema.org:name "HP OmniBook 3 Laptop Next Gen AI 14-hz0044nbx"^^xsd:string ;
-    schema.org:price 799.0 ;
-    schema.org:ratingValue "4.4"^^xsd:float ;
-    schema.org:sku "E0TV3EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omnibook-3-laptop-next-gen-ai-14-hz0044nbx-e0tv3ea-uug> .
-
-product:E0TW1EA a subcat:Budgetlaptop ;
-    schema.org:brand brand:OmniBook ;
-    schema.org:color "Starlit Blue"^^xsd:string ;
-    schema.org:name "HP OmniBook 3 Laptop Next Gen AI 16-bz0045nbx"^^xsd:string ;
-    schema.org:price 1199.0 ;
-    schema.org:ratingValue "3.9"^^xsd:float ;
-    schema.org:sku "E0TW1EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omnibook-3-laptop-next-gen-ai-16-bz0045nbx-e0tw1ea-uug> .
-
-product:E2BE8EA a subcat:Gaming_Laptop ;
-    schema.org:brand brand:OMEN ;
-    schema.org:color "Shadow Black"^^xsd:string ;
-    schema.org:name "HP HyperX OMEN MAX 16 inch Gaming Laptop PC 16-ak1002nb"^^xsd:string ;
-    schema.org:price 2799.0 ;
-    schema.org:ratingValue "3.9"^^xsd:float ;
-    schema.org:sku "E2BE8EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hyperx-omen-max-16-inch-gaming-laptop-pc-16-ak1002nb-e2be8ea-uug> .
-
-product:E2BG6EA a subcat:Gaming_Laptop ;
-    schema.org:brand brand:OMEN ;
-    schema.org:color "Shadow Black"^^xsd:string ;
-    schema.org:name "HP HyperX OMEN 16 inch Gaming Laptop PC 16-ap1004nb"^^xsd:string ;
-    schema.org:price 1399.0 ;
-    schema.org:ratingValue "4.8"^^xsd:float ;
-    schema.org:sku "E2BG6EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hyperx-omen-16-inch-gaming-laptop-pc-16-ap1004nb-e2bg6ea-uug> .
-
-product:E2BK4EA a subcat:Gaming_Laptop ;
-    schema.org:brand brand:Victus ;
-    schema.org:color "Performance Blue"^^xsd:string ;
-    schema.org:name "HP Victus Gaming Laptop 15-fb3019nb"^^xsd:string ;
-    schema.org:price 1199.0 ;
-    schema.org:ratingValue "4.2"^^xsd:float ;
-    schema.org:sku "E2BK4EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/victus-gaming-laptop-15-fb3019nb-e2bk4ea-uug> .
-
-product:E4ER0EA a subcat:Gaming_desktop ;
-    schema.org:brand brand:OMEN ;
-    schema.org:name "HP HyperX OMEN 35L Gaming Desktop GT18-0000nb PC (E4ER0EA-UUG)"^^xsd:string ;
-    schema.org:price 4799.01 ;
-    schema.org:ratingValue "4.9"^^xsd:float ;
-    schema.org:sku "E4ER0EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hyperx-omen-35l-gaming-desktop-gt18-0000nb-pc-e4er0ea-uug> .
-
-product:E4ER9EA a subcat:Gaming_desktop ;
-    schema.org:brand brand:OMEN ;
-    schema.org:name "HP HyperX OMEN 35L Gaming Desktop GT19-0004nb PC (E4ER9EA-UUG)"^^xsd:string ;
-    schema.org:price 199.99 ;
-    schema.org:ratingValue "3.8"^^xsd:float ;
-    schema.org:sku "E4ER9EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hyperx-omen-35l-gaming-desktop-gt19-0004nb-pc-e4er9ea-uug> .
-
-product:E4ES5EA a subcat:Gaming_desktop ;
-    schema.org:brand brand:OMEN ;
-    schema.org:name "HP HyperX OMEN 35L Gaming Desktop GT19-0009nb PC"^^xsd:string ;
-    schema.org:price 3399.0 ;
-    schema.org:ratingValue "4.4"^^xsd:float ;
-    schema.org:sku "E4ES5EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hyperx-omen-35l-gaming-desktop-gt19-0009nb-pc-e4es5ea-uug> .
-
-product:E4ES7EA a subcat:Gaming_desktop ;
-    schema.org:brand brand:OMEN ;
-    schema.org:color "Shadow Black"^^xsd:string ;
-    schema.org:name "HP HyperX OMEN MAX 45L Gaming Desktop GT24-0008nb PC"^^xsd:string ;
-    schema.org:price 5099.0 ;
-    schema.org:ratingValue "3.9"^^xsd:float ;
-    schema.org:sku "E4ES7EA"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hyperx-omen-max-45l-gaming-desktop-gt24-0008nb-pc-e4es7ea-uug> .
-
-product:ENV6532E a subcat:InkjetPrinter ;
-    schema.org:brand brand:Envy ;
-    schema.org:color "Colour"^^xsd:string ;
-    schema.org:name "HP Envy 6532e All-in-One printer met 9 maanden Instant Ink via HP+"^^xsd:string ;
-    schema.org:price 113.99 ;
-    schema.org:ratingValue "4.3"^^xsd:float ;
-    schema.org:sku "ENV6532E"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-envy-6532e-all-in-one-printer-met-6-maanden-instant-ink-via-hp-714p0b-629> .
-
-product:ENV7930 a subcat:InkjetPrinter ;
+product:B63K5B a subcat:InkjetPrinter ;
     schema.org:brand brand:Envy ;
     schema.org:color "Colour"^^xsd:string ;
     schema.org:name "HP Envy Photo 7930 All-in-One printer met 6 maanden Instant Ink"^^xsd:string ;
     schema.org:price 110.0 ;
-    schema.org:ratingValue "4.2"^^xsd:float ;
-    schema.org:sku "ENV7930"^^xsd:string ;
+    schema.org:sku "B63K5B"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-envy-photo-7930-all-in-one-printer-b63k5b-629> .
 
-product:OJ9120B a subcat:InkjetPrinter ;
-    schema.org:brand brand:OfficeJet ;
-    schema.org:color "Colour"^^xsd:string ;
-    schema.org:name "HP OfficeJet Pro 9120b All-in-One printer"^^xsd:string ;
-    schema.org:price 249.01 ;
-    schema.org:ratingValue "4.1"^^xsd:float ;
-    schema.org:sku "OJ9120B"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-officejet-pro-9120b-all-in-one-printer-4v2n0b-629> .
+product:B76QMET a subcat:Workstation ;
+    schema.org:brand brand:HP_Z ;
+    schema.org:color "Black"^^xsd:string ;
+    schema.org:name "HP Z2 G1i Tower workstation - NVIDIA RTX 2000 Ada - 3 jaar onsite garantie"^^xsd:string ;
+    schema.org:price 3999.0 ;
+    schema.org:sku "B76QMET"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hp-z2-g1i-tower-workstation-nvidia-rtx-2000-ada-3-jaar-onsite-garantie-b76qmet-uug> .
 
-product:ST6005 a subcat:InkjetPrinter ;
+product:B7RT8AE a subcat:InkCartridge ;
     schema.org:brand brand:HP ;
-    schema.org:color "Colour"^^xsd:string ;
-    schema.org:name "HP Smart Tank 6005 All-in-One"^^xsd:string ;
-    schema.org:price 217.0 ;
-    schema.org:ratingValue "4.4"^^xsd:float ;
-    schema.org:sku "ST6005"^^xsd:string ;
-    schema.org:url <https://www.hp.com/be-nl/shop/products/printers/hp-smart-tank-6005-all-in-one-2h1w1a-bhc> .
+    schema.org:color "Cyan/Magenta/Yellow"^^xsd:string ;
+    schema.org:name "HP 302XL/304XL originele drie-kleuren inktcartridge"^^xsd:string ;
+    schema.org:price 52.49 ;
+    schema.org:sku "B7RT8AE"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/supplies/hp-302xl-304xl-originele-drie-kleuren-inktcartridge-b7rt8ae-ls1> .
 
-product:T6N01AE a subcat:TonerCartridge ;
+product:B7RT9AE a subcat:InkCartridge ;
     schema.org:brand brand:HP ;
-    schema.org:color "Three-colour"^^xsd:string ;
+    schema.org:color "Black"^^xsd:string ;
+    schema.org:name "HP 302XL/304XL originele zwarte inktcartridge"^^xsd:string ;
+    schema.org:price 42.99 ;
+    schema.org:sku "B7RT9AE"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/supplies/hp-302xl-304xl-originele-zwarte-inktcartridge-b7rt9ae-ls1> .
+
+product:BW4E4EA a subcat:GamingLaptop ;
+    schema.org:brand brand:OMEN ;
+    schema.org:color "Shadow Black"^^xsd:string ;
+    schema.org:name "HP OMEN Transcend 14\" Gaming Laptop - 14-fb1002nb - Shadow Black - QHD OLED - RTX 5060 - Azerty toetsenbord met RGB verlichting per toets"^^xsd:string ;
+    schema.org:price 2999.0 ;
+    schema.org:sku "BW4E4EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omen-transcend-14-gaming-laptop-14-fb1002nb-shadow-black-qhd-oled-rtx-5060-azerty-toetsenbord-met-rgb-verlichting-per-toets-bw4e4ea-uug> .
+
+product:C54W7AT a subcat:BusinessLaptop ;
+    schema.org:brand brand:ProBook ;
+    schema.org:color "Pike Silver"^^xsd:string ;
+    schema.org:name "HP ProBook 4 G1q 14\" laptop"^^xsd:string ;
+    schema.org:price 1098.99 ;
+    schema.org:sku "C54W7AT"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-probook-4-g1q-14-inch-notebook-next-gen-ai-pc-c54w7at-uug> .
+
+product:CF372AM a subcat:TonerCartridge ;
+    schema.org:brand brand:LaserJet ;
+    schema.org:color "Cyan/Magenta/Yellow"^^xsd:string ;
+    schema.org:name "HP 304A originele cyaan/magenta/gele LaserJet tonercartridge, 3-pack"^^xsd:string ;
+    schema.org:price 600.99 ;
+    schema.org:sku "CF372AM"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/supplies/hp-304a-originele-cyaan-magenta-gele-laserjet-tonercartridge-3-pack-cf372am> .
+
+product:CH562EE a subcat:InkCartridge ;
+    schema.org:brand brand:HP ;
+    schema.org:color "Cyan/Magenta/Yellow"^^xsd:string ;
+    schema.org:name "HP 301 originele drie-kleuren inktcartridge"^^xsd:string ;
+    schema.org:price 33.49 ;
+    schema.org:sku "CH562EE"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/supplies/hp-301-originele-drie-kleuren-inktcartridge-ch562ee-uus> .
+
+product:CH563EE a subcat:InkCartridge ;
+    schema.org:brand brand:HP ;
+    schema.org:color "Black"^^xsd:string ;
+    schema.org:name "HP 301XL originele high-capacity zwarte inktcartridge"^^xsd:string ;
+    schema.org:price 57.49 ;
+    schema.org:sku "CH563EE"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/supplies/hp-301xl-originele-high-capacity-zwarte-inktcartridge-ch563ee-uus> .
+
+product:CV7N2EA a subcat:Workstation ;
+    schema.org:brand brand:HP_Z ;
+    schema.org:color "Black"^^xsd:string ;
+    schema.org:name "HP Z1 Tower G1i workstation – NVIDIA RTX A400 – 3 jaar hardware-ondersteuning op locatie"^^xsd:string ;
+    schema.org:price 2799.0 ;
+    schema.org:sku "CV7N2EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hp-z1-tower-g1i-desktop-pc-wolf-pro-security-edition-cv7n2ea-uug> .
+
+product:CZ9K4ET a subcat:Workstation ;
+    schema.org:brand brand:HP_Z ;
+    schema.org:color "Black"^^xsd:string ;
+    schema.org:name "HP ZGX Nano G1n AI Station"^^xsd:string ;
+    schema.org:price 7798.99 ;
+    schema.org:sku "CZ9K4ET"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hp-zgx-nano-g1n-ai-station-cz9k4et-uug> .
+
+product:D4DP1EA a subcat:BusinessLaptop ;
+    schema.org:brand brand:ProBook ;
+    schema.org:color "Pike Silver"^^xsd:string ;
+    schema.org:name "HP ProBook 4 G1i 16\" laptop – LTE/4G - Azerty toetsenbord met verlichting - 3 jaar onsite hardware support"^^xsd:string ;
+    schema.org:price 1299.0 ;
+    schema.org:sku "D4DP1EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-probook-4-g1i-16-inch-notebook-ai-pc-wolf-pro-security-edition-d4dp1ea-uug> .
+
+product:D4TM8EA a subcat:BusinessLaptop ;
+    schema.org:brand brand:ProBook ;
+    schema.org:color "Pike Silver"^^xsd:string ;
+    schema.org:name "HP ProBook 4 G1i 16 inch Notebook AI PC Wolf Pro Security Edition"^^xsd:string ;
+    schema.org:price 1449.0 ;
+    schema.org:sku "D4TM8EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-probook-4-g1i-16-inch-notebook-ai-pc-wolf-pro-security-edition-d4tm8ea-uug> .
+
+product:D8BE9EA a subcat:GamingDesktop ;
+    schema.org:brand brand:OMEN ;
+    schema.org:color "Shadow Black"^^xsd:string ;
+    schema.org:name "HP OMEN 16L Gaming Desktop PC TG03-0104nb PC"^^xsd:string ;
+    schema.org:price 1199.0 ;
+    schema.org:sku "D8BE9EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/omen-16l-gaming-desktop-pc-tg03-0104nb-pc-d8be9ea-uug> .
+
+product:D8BK3EA a subcat:BudgetLaptop ;
+    schema.org:brand brand:OmniBook ;
+    schema.org:color "Glacier Silver"^^xsd:string ;
+    schema.org:name "HP OmniBook 3 Laptop Next Gen AI 17-df0104nbx"^^xsd:string ;
+    schema.org:price 799.0 ;
+    schema.org:sku "D8BK3EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omnibook-3-laptop-next-gen-ai-17-df0104nbx-d8bk3ea-uug> .
+
+product:D8BZ3EA a subcat:BudgetLaptop ;
+    schema.org:brand brand:OmniBook ;
+    schema.org:color "Glacier Silver"^^xsd:string ;
+    schema.org:name "HP OmniBook 3 Laptop 14-hu0003nbx"^^xsd:string ;
+    schema.org:price 749.0 ;
+    schema.org:sku "D8BZ3EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omnibook-3-laptop-14-hu0003nbx-d8bz3ea-uug> .
+
+product:D8BZ6EA a subcat:BudgetLaptop ;
+    schema.org:brand brand:OmniBook ;
+    schema.org:color "Glacier Silver"^^xsd:string ;
+    schema.org:name "HP OmniBook 3 Laptop 16-by0003nbx"^^xsd:string ;
+    schema.org:price 599.0 ;
+    schema.org:sku "D8BZ6EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omnibook-3-laptop-16-by0003nbx-d8bz6ea-uug> .
+
+product:D8CF0EA a subcat:GamingLaptop ;
+    schema.org:brand brand:HyperX ;
+    schema.org:color "Shadow Black"^^xsd:string ;
+    schema.org:name "HP HyperX OMEN 15 inch Gaming Laptop PC 15-gb0000nb"^^xsd:string ;
+    schema.org:price 1699.0 ;
+    schema.org:sku "D8CF0EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hyperx-omen-15-inch-gaming-laptop-pc-15-gb0000nb-d8cf0ea-uug> .
+
+product:DU1F2EA a subcat:BusinessLaptop ;
+    schema.org:brand brand:ProBook ;
+    schema.org:color "Pike Silver"^^xsd:string ;
+    schema.org:name "HP ProBook 4 G2i 16\" Next Gen AI laptop met touch en LTE/5G - Azerty toetsenbord met verlichting - 3 jaar onsite hardware support"^^xsd:string ;
+    schema.org:price 1649.0 ;
+    schema.org:sku "DU1F2EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-wolf-pro-security-edition-du1f2ea-uug> .
+
+product:E0TV3EA a subcat:BudgetLaptop ;
+    schema.org:brand brand:OmniBook ;
+    schema.org:color "Nouvelle Silver"^^xsd:string ;
+    schema.org:name "HP OmniBook 3 Laptop Next Gen AI 14-hz0044nbx"^^xsd:string ;
+    schema.org:price 799.0 ;
+    schema.org:sku "E0TV3EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omnibook-3-laptop-next-gen-ai-14-hz0044nbx-e0tv3ea-uug> .
+
+product:E0TW1EA a subcat:BudgetLaptop ;
+    schema.org:brand brand:OmniBook ;
+    schema.org:color "Starlit Blue"^^xsd:string ;
+    schema.org:name "HP OmniBook 3 Laptop Next Gen AI 16-bz0045nbx"^^xsd:string ;
+    schema.org:price 1199.0 ;
+    schema.org:sku "E0TW1EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hp-omnibook-3-laptop-next-gen-ai-16-bz0045nbx-e0tw1ea-uug> .
+
+product:E2BE8EA a subcat:GamingLaptop ;
+    schema.org:brand brand:HyperX ;
+    schema.org:color "Shadow Black"^^xsd:string ;
+    schema.org:name "HP HyperX OMEN MAX 16 inch Gaming Laptop PC 16-ak1002nb"^^xsd:string ;
+    schema.org:price 2799.0 ;
+    schema.org:sku "E2BE8EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hyperx-omen-max-16-inch-gaming-laptop-pc-16-ak1002nb-e2be8ea-uug> .
+
+product:E2BG6EA a subcat:GamingLaptop ;
+    schema.org:brand brand:HyperX ;
+    schema.org:color "Shadow Black"^^xsd:string ;
+    schema.org:name "HP HyperX OMEN 16 inch Gaming Laptop PC 16-ap1004nb"^^xsd:string ;
+    schema.org:price 1399.0 ;
+    schema.org:sku "E2BG6EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/hyperx-omen-16-inch-gaming-laptop-pc-16-ap1004nb-e2bg6ea-uug> .
+
+product:E2BK4EA a subcat:GamingLaptop ;
+    schema.org:brand brand:Victus ;
+    schema.org:color "Performance Blue"^^xsd:string ;
+    schema.org:name "HP Victus Gaming Laptop 15-fb3019nb"^^xsd:string ;
+    schema.org:price 1199.0 ;
+    schema.org:sku "E2BK4EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/laptops/victus-gaming-laptop-15-fb3019nb-e2bk4ea-uug> .
+
+product:E4ER0EA a subcat:GamingDesktop ;
+    schema.org:brand brand:HyperX ;
+    schema.org:color "Shadow Black"^^xsd:string ;
+    schema.org:name "HP HyperX OMEN 35L Gaming Desktop GT18-0000nb PC (E4ER0EA-UUG)"^^xsd:string ;
+    schema.org:price 4799.01 ;
+    schema.org:sku "E4ER0EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hyperx-omen-35l-gaming-desktop-gt18-0000nb-pc-e4er0ea-uug> .
+
+product:E4ER9EA a subcat:GamingDesktop ;
+    schema.org:brand brand:HyperX ;
+    schema.org:color "Shadow Black"^^xsd:string ;
+    schema.org:name "HP HyperX OMEN 35L Gaming Desktop GT19-0004nb PC (E4ER9EA-UUG)"^^xsd:string ;
+    schema.org:price 3599.0 ;
+    schema.org:sku "E4ER9EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hyperx-omen-35l-gaming-desktop-gt19-0004nb-pc-e4er9ea-uug> .
+
+product:E4ES5EA a subcat:GamingDesktop ;
+    schema.org:brand brand:HyperX ;
+    schema.org:color "Shadow Black"^^xsd:string ;
+    schema.org:name "HP HyperX OMEN 35L Gaming Desktop GT19-0009nb PC"^^xsd:string ;
+    schema.org:price 3399.0 ;
+    schema.org:sku "E4ES5EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hyperx-omen-35l-gaming-desktop-gt19-0009nb-pc-e4es5ea-uug> .
+
+product:E4ES7EA a subcat:GamingDesktop ;
+    schema.org:brand brand:HyperX ;
+    schema.org:color "Shadow Black"^^xsd:string ;
+    schema.org:name "HP HyperX OMEN MAX 45L Gaming Desktop GT24-0008nb PC"^^xsd:string ;
+    schema.org:price 5099.0 ;
+    schema.org:sku "E4ES7EA"^^xsd:string ;
+    schema.org:url <https://www.hp.com/be-nl/shop/products/desktops/hyperx-omen-max-45l-gaming-desktop-gt24-0008nb-pc-e4es7ea-uug> .
+
+product:T6N01AE a subcat:InkCartridge ;
+    schema.org:brand brand:HP ;
+    schema.org:color "Cyan/Magenta/Yellow"^^xsd:string ;
     schema.org:name "HP 303 originele drie-kleuren inktcartridge"^^xsd:string ;
     schema.org:price 28.99 ;
-    schema.org:ratingValue "4.6"^^xsd:float ;
     schema.org:sku "T6N01AE"^^xsd:string ;
-    schema.org:url <https://www.hp.com/nl-nl/shop/products/supplies/hp-303-originele-drie-kleuren-inktcartridge-t6n01ae-uus> .
+    schema.org:url <https://www.hp.com/be-nl/shop/products/supplies/hp-303-originele-drie-kleuren-inktcartridge-t6n01ae-ls1> .
 
-product:T6N03AE a subcat:TonerCartridge ;
+product:T6N03AE a subcat:InkCartridge ;
     schema.org:brand brand:HP ;
-    schema.org:color "Three-colour"^^xsd:string ;
+    schema.org:color "Cyan/Magenta/Yellow"^^xsd:string ;
     schema.org:name "HP 303XL originele high-capacity drie-kleuren inktcartridge"^^xsd:string ;
     schema.org:price 61.99 ;
-    schema.org:ratingValue "4.5"^^xsd:float ;
     schema.org:sku "T6N03AE"^^xsd:string ;
     schema.org:url <https://www.hp.com/be-nl/shop/products/supplies/hp-303xl-originele-high-capacity-drie-kleuren-inktcartridge-t6n03ae-ls1> .
 
@@ -481,27 +448,24 @@ product:W2032A a subcat:TonerCartridge ;
     schema.org:color "Yellow"^^xsd:string ;
     schema.org:name "HP 415A originele gele LaserJet tonercartridge"^^xsd:string ;
     schema.org:price 163.5 ;
-    schema.org:ratingValue "4.8"^^xsd:float ;
     schema.org:sku "W2032A"^^xsd:string ;
-    schema.org:url <https://www.hp.com/nl-nl/shop/products/supplies/hp-415a-originele-gele-laserjet-tonercartridge-w2032a> .
+    schema.org:url <https://www.hp.com/be-nl/shop/products/supplies/hp-415a-originele-gele-laserjet-tonercartridge-w2032a> .
 
 product:W2033A a subcat:TonerCartridge ;
     schema.org:brand brand:LaserJet ;
     schema.org:color "Magenta"^^xsd:string ;
     schema.org:name "HP 415A originele magenta LaserJet tonercartridge"^^xsd:string ;
     schema.org:price 163.5 ;
-    schema.org:ratingValue "3.9"^^xsd:float ;
     schema.org:sku "W2033A"^^xsd:string ;
-    schema.org:url <https://www.hp.com/nl-nl/shop/products/supplies/hp-415a-originele-magenta-laserjet-tonercartridge-w2033a> .
+    schema.org:url <https://www.hp.com/be-nl/shop/products/supplies/hp-415a-originele-magenta-laserjet-tonercartridge-w2033a> .
 
 product:W2033X a subcat:TonerCartridge ;
     schema.org:brand brand:LaserJet ;
     schema.org:color "Magenta"^^xsd:string ;
     schema.org:name "HP 415X originele high-capacity magenta LaserJet tonercartridge"^^xsd:string ;
     schema.org:price 352.49 ;
-    schema.org:ratingValue "4.0"^^xsd:float ;
     schema.org:sku "W2033X"^^xsd:string ;
-    schema.org:url <https://www.hp.com/nl-nl/shop/products/supplies/hp-415x-originele-high-capacity-magenta-laserjet-tonercartridge-w2033x> .
+    schema.org:url <https://www.hp.com/be-nl/shop/products/supplies/hp-415x-originele-high-capacity-magenta-laserjet-tonercartridge-w2033x> .
 
 schema.org:brand owl:equivalentProperty :hasBrand .
 
@@ -578,8 +542,14 @@ brand:Victus a schema.org:Brand ;
 brand:Envy a schema.org:Brand ;
     schema.org:name "Envy"^^xsd:string .
 
+brand:OMEN a schema.org:Brand ;
+    schema.org:name "OMEN"^^xsd:string .
+
 brand:ProBook a schema.org:Brand ;
     schema.org:name "ProBook"^^xsd:string .
+
+subcat:TonerCartridge rdfs:subClassOf cat:Supplies,
+        :Ink .
 
 brand:DesignJet a schema.org:Brand ;
     schema.org:name "DesignJet"^^xsd:string .
@@ -587,45 +557,42 @@ brand:DesignJet a schema.org:Brand ;
 brand:OmniBook a schema.org:Brand ;
     schema.org:name "OmniBook"^^xsd:string .
 
-subcat:Budgetlaptop rdfs:subClassOf cat:Laptops,
+subcat:BudgetLaptop rdfs:subClassOf cat:Laptops,
         :BudgetLaptop .
 
-subcat:Business_Laptop rdfs:subClassOf cat:Laptops,
+subcat:BusinessLaptop rdfs:subClassOf cat:Laptops,
         :BusinessLaptop .
 
-subcat:Gaming_Laptop rdfs:subClassOf cat:Laptops,
-        :GamingLaptop .
-
-subcat:Gaming_desktop rdfs:subClassOf cat:Desktops,
+subcat:GamingDesktop rdfs:subClassOf cat:Desktops,
         :GamingDesktop .
+
+subcat:GamingLaptop rdfs:subClassOf cat:Laptops,
+        :GamingLaptop .
 
 subcat:InkjetPrinter rdfs:subClassOf cat:Printers,
         :InkjetPrinter .
 
-subcat:InktCartridge rdfs:subClassOf cat:Supplies,
-        :Ink .
-
-subcat:Laserprinter rdfs:subClassOf cat:Printers,
+subcat:LaserPrinter rdfs:subClassOf cat:Printers,
         :LaserPrinter .
 
 subcat:Plotter rdfs:subClassOf cat:Printers,
         :Plotter .
 
-subcat:TonerCartridge rdfs:subClassOf cat:Supplies,
-        :Ink .
-
-subcat:workstation rdfs:subClassOf cat:Desktops,
+subcat:Workstation rdfs:subClassOf cat:Desktops,
         :Workstation .
 
 brand:HP_Z a schema.org:Brand ;
     schema.org:name "HP_Z"^^xsd:string .
 
+subcat:InkCartridge rdfs:subClassOf cat:Supplies,
+        :Ink .
+
 brand:HP a schema.org:Brand ;
     schema.org:name "HP"^^xsd:string .
 
+brand:HyperX a schema.org:Brand ;
+    schema.org:name "HyperX"^^xsd:string .
+
 brand:LaserJet a schema.org:Brand ;
     schema.org:name "LaserJet"^^xsd:string .
-
-brand:OMEN a schema.org:Brand ;
-    schema.org:name "OMEN"^^xsd:string .
 

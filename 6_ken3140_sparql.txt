@@ -1,0 +1,271 @@
+------------------------------------------------------------------------------------------------------------------------------
+SPARQL results
+------------------------------------------------------------------------------------------------------------------------------
+
+Query A: 
+
+PREFIX schema: <https://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?product ?productName ?brandName ?category WHERE {
+    VALUES ?targetSku { "B7RT9AE"^^xsd:string }
+    ?product schema:sku ?targetSku ;
+             schema:name ?productName ;
+             schema:brand ?brandResource .
+    ?brandResource schema:name ?brandName .
+    ?product a/rdfs:subClassOf* ?category .
+}
+
+Optimization: First finds the unique object with the target SKU, then traverses its category hierarchy.
+
+Results:
+['http://example.org/webshop/product/B7RT9AE', 'HP 302XL/304XL originele zwarte inktcartridge', 'HP', 'http://example.org/webshop/subcategory/InkCartridge']
+['http://example.org/webshop/product/B7RT9AE', 'HP 302XL/304XL originele zwarte inktcartridge', 'HP', 'http://example.org/webshop/category/Supplies']
+['http://example.org/webshop/product/B7RT9AE', 'HP 302XL/304XL originele zwarte inktcartridge', 'HP', 'https://www.hp.com/ontology#Ink']
+['http://example.org/webshop/product/B7RT9AE', 'HP 302XL/304XL originele zwarte inktcartridge', 'HP', 'https://schema.org/Product']
+
+------------
+
+Query B: 
+
+PREFIX schema: <https://schema.org/>
+
+SELECT ?brandName ?item1 ?subcat1 ?item2 ?subcat2 WHERE {
+    ?product1 schema:brand ?brand ;
+              a ?subcat1 ;
+              schema:name ?item1 .
+    ?product2 schema:brand ?brand ;
+              a ?subcat2 ;
+              schema:name ?item2 .
+    ?brand schema:name ?brandName .
+    FILTER (STR(?subcat1) < STR(?subcat2))
+}
+ORDER BY ?brandName
+
+Optimization: Uses < instead of != on subcategories so every pair only shows up once without symmetric duplicates.
+
+Results:
+['HP', 'HP 302XL/304XL originele drie-kleuren inktcartridge', 'http://example.org/webshop/subcategory/InkCartridge', 'HP Smart Tank 6005 All-in-One', 'http://example.org/webshop/subcategory/InkjetPrinter']
+['HP', 'HP 302XL/304XL originele zwarte inktcartridge', 'http://example.org/webshop/subcategory/InkCartridge', 'HP Smart Tank 6005 All-in-One', 'http://example.org/webshop/subcategory/InkjetPrinter']
+['HP', 'HP 301 originele drie-kleuren inktcartridge', 'http://example.org/webshop/subcategory/InkCartridge', 'HP Smart Tank 6005 All-in-One', 'http://example.org/webshop/subcategory/InkjetPrinter']
+['HP', 'HP 301XL originele high-capacity zwarte inktcartridge', 'http://example.org/webshop/subcategory/InkCartridge', 'HP Smart Tank 6005 All-in-One', 'http://example.org/webshop/subcategory/InkjetPrinter']
+['HP', 'HP 303 originele drie-kleuren inktcartridge', 'http://example.org/webshop/subcategory/InkCartridge', 'HP Smart Tank 6005 All-in-One', 'http://example.org/webshop/subcategory/InkjetPrinter']
+['HP', 'HP 303XL originele high-capacity drie-kleuren inktcartridge', 'http://example.org/webshop/subcategory/InkCartridge', 'HP Smart Tank 6005 All-in-One', 'http://example.org/webshop/subcategory/InkjetPrinter']
+['HP_Z', 'HP Zbook Ultra G1a 14" mobile workstation - OLED scherm met touch - AMD Radeon 8050S Graphics', 'http://example.org/webshop/subcategory/BusinessLaptop', 'HP Z4 Tower G5 workstation - NVIDIA RTX PRO 4000 Blackwell 24GB - 3 jaar onsite garantie', 'http://example.org/webshop/subcategory/Workstation']
+['HP_Z', 'HP Zbook Ultra G1a 14" mobile workstation - OLED scherm met touch - AMD Radeon 8050S Graphics', 'http://example.org/webshop/subcategory/BusinessLaptop', 'HP Z2 Mini G1a workstation - AMD Radeon 8050S - 3 jaar onsite garantie', 'http://example.org/webshop/subcategory/Workstation']
+['HP_Z', 'HP Zbook Ultra G1a 14" mobile workstation - OLED scherm met touch - AMD Radeon 8050S Graphics', 'http://example.org/webshop/subcategory/BusinessLaptop', 'HP Z2 G1i Tower workstation - NVIDIA RTX 2000 Ada - 3 jaar onsite garantie', 'http://example.org/webshop/subcategory/Workstation']
+['HP_Z', 'HP Zbook Ultra G1a 14" mobile workstation - OLED scherm met touch - AMD Radeon 8050S Graphics', 'http://example.org/webshop/subcategory/BusinessLaptop', 'HP Z1 Tower G1i workstation – NVIDIA RTX A400 – 3 jaar hardware-ondersteuning op locatie', 'http://example.org/webshop/subcategory/Workstation']
+['HP_Z', 'HP Zbook Ultra G1a 14" mobile workstation - OLED scherm met touch - AMD Radeon 8050S Graphics', 'http://example.org/webshop/subcategory/BusinessLaptop', 'HP ZGX Nano G1n AI Station', 'http://example.org/webshop/subcategory/Workstation']
+['HyperX', 'HP HyperX OMEN 35L Gaming Desktop GT18-0000nb PC (E4ER0EA-UUG)', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN 15 inch Gaming Laptop PC 15-gb0000nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['HyperX', 'HP HyperX OMEN 35L Gaming Desktop GT18-0000nb PC (E4ER0EA-UUG)', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN MAX 16 inch Gaming Laptop PC 16-ak1002nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['HyperX', 'HP HyperX OMEN 35L Gaming Desktop GT18-0000nb PC (E4ER0EA-UUG)', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN 16 inch Gaming Laptop PC 16-ap1004nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['HyperX', 'HP HyperX OMEN 35L Gaming Desktop GT19-0004nb PC (E4ER9EA-UUG)', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN 15 inch Gaming Laptop PC 15-gb0000nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['HyperX', 'HP HyperX OMEN 35L Gaming Desktop GT19-0004nb PC (E4ER9EA-UUG)', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN MAX 16 inch Gaming Laptop PC 16-ak1002nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['HyperX', 'HP HyperX OMEN 35L Gaming Desktop GT19-0004nb PC (E4ER9EA-UUG)', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN 16 inch Gaming Laptop PC 16-ap1004nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['HyperX', 'HP HyperX OMEN 35L Gaming Desktop GT19-0009nb PC', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN 15 inch Gaming Laptop PC 15-gb0000nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['HyperX', 'HP HyperX OMEN 35L Gaming Desktop GT19-0009nb PC', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN MAX 16 inch Gaming Laptop PC 16-ak1002nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['HyperX', 'HP HyperX OMEN 35L Gaming Desktop GT19-0009nb PC', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN 16 inch Gaming Laptop PC 16-ap1004nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['HyperX', 'HP HyperX OMEN MAX 45L Gaming Desktop GT24-0008nb PC', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN 15 inch Gaming Laptop PC 15-gb0000nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['HyperX', 'HP HyperX OMEN MAX 45L Gaming Desktop GT24-0008nb PC', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN MAX 16 inch Gaming Laptop PC 16-ak1002nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['HyperX', 'HP HyperX OMEN MAX 45L Gaming Desktop GT24-0008nb PC', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP HyperX OMEN 16 inch Gaming Laptop PC 16-ap1004nb', 'http://example.org/webshop/subcategory/GamingLaptop']
+['LaserJet', 'HP Color LaserJet Enterprise Flow MFP 5800zf-printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 304A originele cyaan/magenta/gele LaserJet tonercartridge, 3-pack', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP Color LaserJet Enterprise Flow MFP 5800zf-printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415A originele gele LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP Color LaserJet Enterprise Flow MFP 5800zf-printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415A originele magenta LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP Color LaserJet Enterprise Flow MFP 5800zf-printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415X originele high-capacity magenta LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP Color LaserJet Enterprise 4701dn printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 304A originele cyaan/magenta/gele LaserJet tonercartridge, 3-pack', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP Color LaserJet Enterprise 4701dn printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415A originele gele LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP Color LaserJet Enterprise 4701dn printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415A originele magenta LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP Color LaserJet Enterprise 4701dn printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415X originele high-capacity magenta LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP Color LaserJet Enterprise MFP 4801fw printer (67Q06A)', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 304A originele cyaan/magenta/gele LaserJet tonercartridge, 3-pack', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP Color LaserJet Enterprise MFP 4801fw printer (67Q06A)', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415A originele gele LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP Color LaserJet Enterprise MFP 4801fw printer (67Q06A)', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415A originele magenta LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP Color LaserJet Enterprise MFP 4801fw printer (67Q06A)', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415X originele high-capacity magenta LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP LaserJet MFP M235sdw printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 304A originele cyaan/magenta/gele LaserJet tonercartridge, 3-pack', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP LaserJet MFP M235sdw printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415A originele gele LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP LaserJet MFP M235sdw printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415A originele magenta LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP LaserJet MFP M235sdw printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415X originele high-capacity magenta LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP LaserJet M209d printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 304A originele cyaan/magenta/gele LaserJet tonercartridge, 3-pack', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP LaserJet M209d printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415A originele gele LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP LaserJet M209d printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415A originele magenta LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['LaserJet', 'HP LaserJet M209d printer', 'http://example.org/webshop/subcategory/LaserPrinter', 'HP 415X originele high-capacity magenta LaserJet tonercartridge', 'http://example.org/webshop/subcategory/TonerCartridge']
+['OMEN', 'HP OMEN 16L Gaming Desktop PC TG03-0104nb PC', 'http://example.org/webshop/subcategory/GamingDesktop', 'HP OMEN Transcend 14" Gaming Laptop - 14-fb1002nb - Shadow Black - QHD OLED - RTX 5060 - Azerty toetsenbord met RGB verlichting per toets', 'http://example.org/webshop/subcategory/GamingLaptop']
+
+------------
+
+Query C: 
+
+PREFIX schema: <https://schema.org/>
+
+SELECT ?brandName (COUNT(?product) AS ?products) (ROUND(AVG(?price)) AS ?avgPrice) WHERE {
+    ?product schema:brand ?brand ;
+             schema:price ?price .
+    ?brand schema:name ?brandName .
+}
+GROUP BY ?brandName
+ORDER BY DESC(?avgPrice)
+
+Optimization: Matches only the brand and price triples needed for aggregation, minimizing working table size.
+
+Results:
+['HP_Z', '6', '4599']
+['HyperX', '7', '3256']
+['OMEN', '2', '2099']
+['DesignJet', '5', '1950']
+['ProBook', '4', '1374']
+['Victus', '1', '1199']
+['OmniBook', '5', '829']
+['LaserJet', '9', '668']
+['OfficeJet', '1', '249']
+['Envy', '2', '112']
+['HP', '7', '71']
+['DeskJet', '1', '60']
+
+------------
+
+Query D: 
+
+PREFIX schema: <https://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX hp: <https://www.hp.com/ontology#>
+
+SELECT ?productName ?brandName ?price ?brandAvgPrice WHERE {
+    {
+        SELECT ?brand (ROUND(AVG(?productPrice)) AS ?brandAvgPrice) WHERE {
+            ?laptopProduct a/rdfs:subClassOf* hp:Laptop ;
+                           schema:brand ?brand ;
+                           schema:price ?productPrice .
+        }
+        GROUP BY ?brand
+    }
+    ?product a/rdfs:subClassOf* hp:Laptop ;
+             schema:brand ?brand ;
+             schema:name ?productName ;
+             schema:price ?price .
+    ?brand schema:name ?brandName .
+}
+ORDER BY DESC(?brandAvgPrice) DESC(?price)
+
+Optimization: Subquery computes the average price per brand within laptops once, then every laptop is joined and sorted by it.
+
+Results:
+['HP Zbook Ultra G1a 14" mobile workstation - OLED scherm met touch - AMD Radeon 8050S Graphics', 'HP_Z', '3299.0', '3299']
+['HP OMEN Transcend 14" Gaming Laptop - 14-fb1002nb - Shadow Black - QHD OLED - RTX 5060 - Azerty toetsenbord met RGB verlichting per toets', 'OMEN', '2999.0', '2999']
+['HP HyperX OMEN MAX 16 inch Gaming Laptop PC 16-ak1002nb', 'HyperX', '2799.0', '1966']
+['HP HyperX OMEN 15 inch Gaming Laptop PC 15-gb0000nb', 'HyperX', '1699.0', '1966']
+['HP HyperX OMEN 16 inch Gaming Laptop PC 16-ap1004nb', 'HyperX', '1399.0', '1966']
+['HP ProBook 4 G2i 16" Next Gen AI laptop met touch en LTE/5G - Azerty toetsenbord met verlichting - 3 jaar onsite hardware support', 'ProBook', '1649.0', '1374']
+['HP ProBook 4 G1i 16 inch Notebook AI PC Wolf Pro Security Edition', 'ProBook', '1449.0', '1374']
+['HP ProBook 4 G1i 16" laptop – LTE/4G - Azerty toetsenbord met verlichting - 3 jaar onsite hardware support', 'ProBook', '1299.0', '1374']
+['HP ProBook 4 G1q 14" laptop', 'ProBook', '1098.99', '1374']
+['HP Victus Gaming Laptop 15-fb3019nb', 'Victus', '1199.0', '1199']
+['HP OmniBook 3 Laptop Next Gen AI 16-bz0045nbx', 'OmniBook', '1199.0', '829']
+['HP OmniBook 3 Laptop Next Gen AI 17-df0104nbx', 'OmniBook', '799.0', '829']
+['HP OmniBook 3 Laptop Next Gen AI 14-hz0044nbx', 'OmniBook', '799.0', '829']
+['HP OmniBook 3 Laptop 14-hu0003nbx', 'OmniBook', '749.0', '829']
+['HP OmniBook 3 Laptop 16-by0003nbx', 'OmniBook', '599.0', '829']
+
+------------
+
+Query E: 
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX sdo: <http://schema.org/>
+
+SELECT ?description
+       (GROUP_CONCAT(DISTINCT ?typeLabel; separator=", ") AS ?type)
+       (GROUP_CONCAT(DISTINCT ?manufacturerLabel; separator=", ") AS ?manufacturer)
+       (GROUP_CONCAT(DISTINCT ?hqLabel; separator=", ") AS ?headquarters)
+       ?image
+WHERE {
+    VALUES ?brandLabel { "HP Z"@en }
+    SERVICE <https://query.wikidata.org/sparql> {
+        ?brand rdfs:label ?brandLabel ;
+               sdo:description ?description ;
+               wdt:P31 ?brandType ;
+               wdt:P176 ?manufacturerEntity ;
+               wdt:P18 ?image .
+        ?brandType rdfs:label ?typeLabel .
+        ?manufacturerEntity rdfs:label ?manufacturerLabel ;
+                            wdt:P159 ?hqLocation .
+        ?hqLocation rdfs:label ?hqLabel .
+        FILTER (lang(?description) = "en" && lang(?typeLabel) = "en" && lang(?manufacturerLabel) = "en" && lang(?hqLabel) = "en")
+    }
+}
+GROUP BY ?description ?image
+
+Optimization: Direct filtering and language constraints are evaluated within the remote SERVICE block, minimizing transfer size.
+
+Results:
+['series of workstation computer models', 'computer model series, model series', 'Hewlett-Packard, HP Inc.', 'Palo Alto', 'http://commons.wikimedia.org/wiki/Special:FilePath/Six%20HP%20workstations.jpg']
+
+------------
+
+Query F: 
+
+PREFIX schema: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?name ?brandName ?color ?price WHERE {
+    VALUES ?targetSku { "B7RT9AE"^^xsd:string }
+    ?item schema:sku ?targetSku ;
+          a ?subcat ;
+          schema:brand ?brand ;
+          schema:price ?itemPrice .
+    ?other a ?subcat ;
+           schema:name ?name ;
+           schema:brand ?otherBrand ;
+           schema:price ?price .
+    ?otherBrand schema:name ?brandName .
+    OPTIONAL { ?other schema:color ?color }
+    OPTIONAL { ?item schema:color ?itemColor }
+    FILTER (?other != ?item)
+    BIND (IF(?otherBrand = ?brand, 1, 0) AS ?sameBrand)
+    BIND (IF(BOUND(?color) && BOUND(?itemColor) && ?color = ?itemColor, 1, 0) AS ?sameColor)
+    BIND (ABS(?price - ?itemPrice) AS ?priceDiff)
+}
+ORDER BY DESC(?sameBrand) DESC(?sameColor) ?priceDiff
+LIMIT 3
+
+Optimization: Restricts recommendations to the same subcategory upfront, then scores candidates using arithmetic BIND expressions.
+
+Results:
+['HP 301XL originele high-capacity zwarte inktcartridge', 'HP', 'Black', '57.49']
+['HP 302XL/304XL originele drie-kleuren inktcartridge', 'HP', 'Cyan/Magenta/Yellow', '52.49']
+['HP 301 originele drie-kleuren inktcartridge', 'HP', 'Cyan/Magenta/Yellow', '33.49']
+
+------------
+
+Query G: 
+
+Question: Which printers cost less than 300 euro, and what type of printer is each one?
+
+Why it is useful: this is what a price filter on a "Printers" page does. Because the subcategories are linked to hp:Printer in the ontology, one query searches inkjet printers, laser printers and plotters without listing them. If a new printer subcategory is added later and linked to hp:Printer, it is included automatically, which a simple category = '...' filter would not do.
+
+SPARQL Query:
+PREFIX schema: <https://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX hp: <https://www.hp.com/ontology#>
+
+SELECT ?name ?type ?price WHERE {
+    ?printer a ?type ;
+             schema:name ?name ;
+             schema:price ?price .
+    ?type rdfs:subClassOf* hp:Printer .
+    FILTER (?price < 300)
+}
+ORDER BY ?price
+
+Optimization: Uses rdfs:subClassOf* property path to search all printer subtypes in a single query pattern without UNION blocks.
+
+Results:
+['HP DeskJet 4320 All-in-One printer met 6 maanden Instant Ink', 'http://example.org/webshop/subcategory/InkjetPrinter', '60.0']
+['HP LaserJet M209d printer', 'http://example.org/webshop/subcategory/LaserPrinter', '99.0']
+['HP Envy Photo 7930 All-in-One printer met 6 maanden Instant Ink', 'http://example.org/webshop/subcategory/InkjetPrinter', '110.0']
+['HP Envy 6532e All-in-One printer met 9 maanden Instant Ink via HP+', 'http://example.org/webshop/subcategory/InkjetPrinter', '113.99']
+['HP Smart Tank 6005 All-in-One', 'http://example.org/webshop/subcategory/InkjetPrinter', '217.0']
+['HP LaserJet MFP M235sdw printer', 'http://example.org/webshop/subcategory/LaserPrinter', '239.89']
+['HP OfficeJet Pro 9120b All-in-One printer', 'http://example.org/webshop/subcategory/InkjetPrinter', '249.01']
+
+-----------------------------------------------------------------------------------------------------------------------------
