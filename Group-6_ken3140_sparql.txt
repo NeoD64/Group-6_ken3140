@@ -1,0 +1,189 @@
+KEN3140 Assignment 2 - SPARQL queries and results
+===================================================
+
+The queries below were executed with RDFLib on Group-6_ken3140_webshop.ttl after
+loading ontology.ttl. The graph contains 50 webshop products.
+
+Prefixes used where applicable:
+PREFIX schema: <https://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX hp: <https://www.hp.com/ontology#>
+
+A) Categories, subcategories, and brand for a selected item
+------------------------------------------------------------
+Question: Which categories, subcategories, and brand are associated with SKU B7RT9AE?
+
+SELECT ?product ?productName ?brandName ?category WHERE {
+    ?product schema:sku ?targetSku ;
+             schema:name ?productName ;
+             schema:brand ?brandResource .
+    ?brandResource schema:name ?brandName .
+    ?product a/rdfs:subClassOf* ?category .
+}
+
+Result:
+- Product: http://example.org/webshop/product/B7RT9AE
+- Name: HP 302XL/304XL originele zwarte inktcartridge
+- Brand: HP
+- Types/categories: InkCartridge, Supplies, hp:Ink, schema:Product
+
+The unique SKU is supplied through RDFLib initBindings, which restricts the
+initial product lookup before following the type hierarchy.
+
+B) Products from different subcategories with the same brand
+--------------------------------------------------------------
+SELECT ?brandName ?item1 ?subcat1 ?item2 ?subcat2 WHERE {
+    ?product1 schema:brand ?brand ;
+              a ?subcat1 ;
+              schema:name ?item1 .
+    ?product2 schema:brand ?brand ;
+              a ?subcat2 ;
+              schema:name ?item2 .
+    ?brand schema:name ?brandName .
+    FILTER (STR(?subcat1) < STR(?subcat2))
+}
+ORDER BY ?brandName
+
+Result examples:
+- HP: InkCartridge and InkjetPrinter
+- HP_Z: BusinessLaptop and Workstation
+- HyperX: GamingDesktop and GamingLaptop
+- LaserJet: LaserPrinter and TonerCartridge
+- OMEN: GamingDesktop and GamingLaptop
+
+The lexical less-than filter removes reversed duplicate pairs while retaining
+only products whose subcategory IRIs differ.
+
+C) Average price grouped by brand
+----------------------------------
+SELECT ?brandName (COUNT(?product) AS ?products)
+       (ROUND(AVG(?price)) AS ?avgPrice) WHERE {
+    ?product schema:brand ?brand ;
+             schema:price ?price .
+    ?brand schema:name ?brandName .
+}
+GROUP BY ?brandName
+ORDER BY DESC(?avgPrice)
+
+Result (brand, product count, rounded average price):
+HP_Z 6 4599; HyperX 7 3256; OMEN 2 2099; DesignJet 5 1950;
+ProBook 4 1374; Victus 1 1199; OmniBook 5 829; LaserJet 9 668;
+OfficeJet 1 249; Envy 2 112; HP 7 71; DeskJet 1 60.
+
+D) Sort laptop products by average brand price
+-----------------------------------------------
+SELECT ?productName ?brandName ?price ?brandAvgPrice WHERE {
+    {
+        SELECT ?brand (ROUND(AVG(?p)) AS ?brandAvgPrice) WHERE {
+            ?x a/rdfs:subClassOf* hp:Laptop ;
+               schema:brand ?brand ;
+               schema:price ?p .
+        }
+        GROUP BY ?brand
+    }
+    ?product a/rdfs:subClassOf* hp:Laptop ;
+             schema:brand ?brand ;
+             schema:name ?productName ;
+             schema:price ?price .
+    ?brand schema:name ?brandName .
+}
+ORDER BY DESC(?brandAvgPrice) DESC(?price)
+
+Result summary:
+HP_Z laptops first (average 3299), followed by OMEN (2999), HyperX (1966),
+ProBook (1374), Victus (1199), and OmniBook (829). The products are then
+ordered by their brand average and individual price.
+
+E) Five facts about the top-ranked brand using Wikidata
+--------------------------------------------------------
+The top-ranked brand from D is HP Z. The external query was executed through
+the Wikidata SPARQL endpoint:
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX sdo: <http://schema.org/>
+
+SELECT ?description
+       (GROUP_CONCAT(DISTINCT ?typeLabel; separator=", ") AS ?type)
+       (GROUP_CONCAT(DISTINCT ?manufacturerLabel; separator=", ") AS ?manufacturer)
+       (GROUP_CONCAT(DISTINCT ?hqLabel; separator=", ") AS ?headquarters)
+       ?image
+WHERE {
+    SERVICE <https://query.wikidata.org/sparql> {
+        ?brand rdfs:label ?brandLabel ;
+               sdo:description ?description ;
+               wdt:P31 ?t ;
+               wdt:P176 ?m ;
+               wdt:P18 ?image .
+        ?t rdfs:label ?typeLabel .
+        ?m rdfs:label ?manufacturerLabel ;
+           wdt:P159 ?hq .
+        ?hq rdfs:label ?hqLabel .
+        FILTER (lang(?description) = "en" && lang(?typeLabel) = "en" &&
+                lang(?manufacturerLabel) = "en" && lang(?hqLabel) = "en")
+    }
+}
+GROUP BY ?description ?image
+
+Result:
+- Description: series of workstation computer models
+- Type: model series, computer model series
+- Manufacturer: Hewlett-Packard, HP Inc.
+- Headquarters: Palo Alto
+- Image: http://commons.wikimedia.org/wiki/Special:FilePath/Six%20HP%20workstations.jpg
+
+F) Recommend a similar item
+----------------------------
+SELECT ?name ?brandName ?color ?price WHERE {
+    ?item schema:sku ?targetSku ;
+          a ?subcat ;
+          schema:brand ?brand ;
+          schema:price ?itemPrice .
+    ?other a ?subcat ;
+           schema:name ?name ;
+           schema:brand ?otherBrand ;
+           schema:price ?price .
+    ?otherBrand schema:name ?brandName .
+    OPTIONAL { ?other schema:color ?color }
+    OPTIONAL { ?item schema:color ?itemColor }
+    FILTER (?other != ?item)
+    BIND (IF(?otherBrand = ?brand, 1, 0) AS ?sameBrand)
+    BIND (IF(BOUND(?color) && BOUND(?itemColor) && ?color = ?itemColor,
+             1, 0) AS ?sameColor)
+    BIND (ABS(?price - ?itemPrice) AS ?priceDiff)
+}
+ORDER BY DESC(?sameBrand) DESC(?sameColor) ?priceDiff
+LIMIT 3
+
+For target SKU B7RT9AE, the recommendations were:
+- HP 301XL originele high-capacity zwarte inktcartridge, HP, Black, 57.49
+- HP 302XL/304XL originele drie-kleuren inktcartridge, HP, Cyan/Magenta/Yellow, 52.49
+- HP 301 originele drie-kleuren inktcartridge, HP, Cyan/Magenta/Yellow, 33.49
+
+The query prioritizes shared subcategory, brand, color, and then closest price.
+
+G) Custom webshop question
+---------------------------
+Question: Which printers cost less than 300 euro, and what type of printer is each one?
+
+SELECT ?name ?type ?price WHERE {
+    ?printer a ?type ;
+             schema:name ?name ;
+             schema:price ?price .
+    ?type rdfs:subClassOf* hp:Printer .
+    FILTER (?price < 300)
+}
+ORDER BY ?price
+
+Result:
+- HP DeskJet 4320 All-in-One printer met 6 maanden Instant Ink, InkjetPrinter, 60.0
+- HP LaserJet M209d printer, LaserPrinter, 99.0
+- HP Envy Photo 7930 All-in-One printer met 6 maanden Instant Ink, InkjetPrinter, 110.0
+- HP Envy 6532e All-in-One printer met 9 maanden Instant Ink via HP+, InkjetPrinter, 113.99
+- HP Smart Tank 6005 All-in-One, InkjetPrinter, 217.0
+- HP LaserJet MFP M235sdw printer, LaserPrinter, 239.89
+- HP OfficeJet Pro 9120b All-in-One printer, InkjetPrinter, 249.01
+
+This is useful for semantic webshop search because a user can search across
+all printer subcategories using the shared hp:Printer superclass instead of
+hard-coding each printer subcategory.
